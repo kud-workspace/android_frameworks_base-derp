@@ -134,5 +134,6 @@ public class SystemSettings {
         Settings.System.NOTIFICATION_PULSE_DURATION,
         Settings.System.SCREEN_OFF_ANIMATION,
         Settings.System.DISABLE_RIPPLE_EFFECT,
+        Settings.System.HEADS_UP_NOTIFICATION_SNOOZE,
     };
 }
