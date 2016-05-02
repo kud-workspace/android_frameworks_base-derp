@@ -4890,6 +4890,12 @@ public final class Settings {
         public static final String USER_ROTATION = "user_rotation";
 
         /**
+         * Enable or disable lockscreen rotation
+         */
+        @Readable
+        public static final String LOCKSCREEN_ROTATION = "lockscreen_rotation";
+
+        /**
          * Control whether the rotation lock toggle in the System UI should be hidden.
          * Typically this is done for accessibility purposes to make it harder for
          * the user to accidentally toggle the rotation lock while the display rotation
