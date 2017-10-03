@@ -323,5 +323,6 @@ public class SecureSettingsValidators {
         VALIDATORS.put(Secure.STATUS_BAR_CLOCK_AUTO_HIDE, BOOLEAN_VALIDATOR);
         VALIDATORS.put(Secure.FEATURE_TOUCH_HOVERING, BOOLEAN_VALIDATOR);
         VALIDATORS.put(Secure.STATUS_BAR_QUICK_QS_PULLDOWN, new InclusiveIntegerRangeValidator(0, 2));
+        VALIDATORS.put(Secure.DOUBLE_TAP_SLEEP_GESTURE, BOOLEAN_VALIDATOR);
     }
 }
