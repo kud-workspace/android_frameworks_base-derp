@@ -73,4 +73,10 @@
 
     <!-- USB tethering QS tile -->
     <string name="quick_settings_usb_tether_label">USB-Tethering</string>
+
+    <!-- Screen pinning dialog description. (for devices without navbar) -->
+    <string name="screen_pinning_description_no_navbar">Diese App ist angepinnt. \"Zurück\" gedrückt halten um sie zu lösen.</string>
+
+    <!-- Notify use that they are in Lock-to-app (for devices without navbar)-->
+    <string name="screen_pinning_toast_no_navbar">Um die Fixierung aufzuheben, halten Sie die \"Zurück\" Taste gedrückt</string>
 </resources>
