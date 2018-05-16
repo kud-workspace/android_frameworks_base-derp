@@ -54,6 +54,13 @@
     <string name="quick_settings_powershare_off_low_battery_label">Battery Share aus\nAkkustand zu niedrig</string>
     <string name="quick_settings_powershare_enabled_label">Battery Share ist aktiviert</string>
 
+    <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Lese-Modus</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Lesemodus an.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Lesemodus aus.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Lesemodus angeschaltet.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Lesemodus ausgeschaltet.</string>
+
     <!-- Sync QS tile -->
     <string name="quick_settings_sync_label">Synchronisation</string>
     <string name="accessibility_quick_settings_sync_off">Synchronisierung aus.</string>
