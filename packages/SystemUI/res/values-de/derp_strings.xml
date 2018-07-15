@@ -20,4 +20,7 @@
     <!-- Navigation bar dpad -->
     <string name="accessibility_dpad_left">Pfeiltaste links</string>
     <string name="accessibility_dpad_right">Pfeiltaste rechts</string>
+
+    <!-- Name of the clock in status bar [CHAR LIMIT=30] -->
+    <string name="clock">Uhr</string>
 </resources>
