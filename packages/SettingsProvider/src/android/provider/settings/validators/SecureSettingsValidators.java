@@ -319,5 +319,6 @@ public class SecureSettingsValidators {
         });
         VALIDATORS.put(Secure.VOLUME_LINK_NOTIFICATION, BOOLEAN_VALIDATOR);
         VALIDATORS.put(Secure.STATUS_BAR_CLOCK, new InclusiveIntegerRangeValidator(0, 2));
+        VALIDATORS.put(Secure.STATUS_BAR_AM_PM, new InclusiveIntegerRangeValidator(0, 2));
     }
 }
