@@ -79,4 +79,9 @@
 
     <!-- Notify use that they are in Lock-to-app (for devices without navbar)-->
     <string name="screen_pinning_toast_no_navbar">Um die Fixierung aufzuheben, halten Sie die \"Zurück\" Taste gedrückt</string>
+
+    <!-- Screen pinning dialog description. (for devices without navbar and with gestures on fingerprint sensor) -->
+    <string name="screen_pinning_description_no_navbar_fpsensor">Dieser Bildschrim ist fixiert. Halten Sie die Zurück-Taste gedrückt, um die Fixierung aufzuheben.</string>
+    <!-- Notify use that they are in Lock-to-app (for devices without navbar and with gestures on fingerprint sensor)-->
+    <string name="screen_pinning_toast_no_navbar_fpsensor">Um die Fixierung dieses Bildschirms aufzuheben, halten Sie dem Fingerabdrucksensor gedrückt</string>
 </resources>
