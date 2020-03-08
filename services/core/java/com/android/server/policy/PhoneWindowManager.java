@@ -561,6 +561,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     private Action mAssistLongPressAction;
     private Action mAppSwitchPressAction;
     private Action mAppSwitchLongPressAction;
+    private Action mEdgeLongSwipeAction;
 
     // support for activating the lock screen while the screen is on
     private HashSet<Integer> mAllowLockscreenWhenOnDisplays = new HashSet<>();
@@ -676,6 +677,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     private boolean mTorchEnabled;
     private int mTorchTimeout;
     private PendingIntent mTorchOffPendingIntent;
+
+    private boolean mLongSwipeDown;
+    private static final int LONG_SWIPE_FLAGS = KeyEvent.FLAG_LONG_PRESS
+            | KeyEvent.FLAG_FROM_SYSTEM | KeyEvent.FLAG_VIRTUAL_HARD_KEY;
 
     private static final int MSG_CAMERA_LONG_PRESS = 101;
 
@@ -847,6 +852,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION), false, this,
+                    UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.KEY_EDGE_LONG_SWIPE_ACTION), false, this,
                     UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.HOME_WAKE_SCREEN), false, this,
@@ -2389,6 +2397,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 Settings.System.KEY_BACK_LONG_PRESS_ACTION,
                 mBackLongPressAction);
 
+        mEdgeLongSwipeAction = Action.NOTHING;
+
         mHomeLongPressAction = Action.fromIntSafe(res.getInteger(
                 com.android.internal.R.integer.config_longPressOnHomeBehavior));
         if (mHomeLongPressAction.ordinal() > Action.SLEEP.ordinal()) {
@@ -2432,6 +2442,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION,
                     mAppSwitchLongPressAction);
         }
+
+        mEdgeLongSwipeAction = Action.fromSettings(resolver,
+                Settings.System.KEY_EDGE_LONG_SWIPE_ACTION,
+                mEdgeLongSwipeAction);
 
         mShortPressOnWindowBehavior = SHORT_PRESS_WINDOW_NOTHING;
         if (mPackageManager.hasSystemFeature(FEATURE_PICTURE_IN_PICTURE)) {
@@ -4073,6 +4087,23 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         // Handle special keys.
         switch (keyCode) {
             case KeyEvent.KEYCODE_BACK: {
+                boolean isLongSwipe = (event.getFlags() & LONG_SWIPE_FLAGS) == LONG_SWIPE_FLAGS;
+                if (mLongSwipeDown && isLongSwipe && !down) {
+                    // Trigger long swipe action
+                    performKeyAction(mEdgeLongSwipeAction, event);
+                    // Reset long swipe state
+                    mLongSwipeDown = false;
+                    // Don't pass back press to app
+                    result &= ~ACTION_PASS_TO_USER;
+                    break;
+                }
+                mLongSwipeDown = isLongSwipe && down;
+                if (mLongSwipeDown) {
+                    // Don't pass back press to app
+                    result &= ~ACTION_PASS_TO_USER;
+                    break;
+                }
+
                 if (down) {
                     mBackKeyHandled = false;
 
