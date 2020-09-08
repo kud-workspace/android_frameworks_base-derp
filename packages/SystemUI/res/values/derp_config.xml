@@ -20,7 +20,7 @@
 
     <!-- The default tiles to display in QuickSettings -->
     <string name="quick_settings_tiles_extra" translatable="false">
-        ambient_display,aod,caffeine,heads_up,livedisplay,reading_mode,sync,powershare,usb_tether
+        ambient_display,aod,caffeine,heads_up,livedisplay,reading_mode,anti_flicker,sync,powershare,usb_tether
     </string>
 
 </resources>
