@@ -5367,6 +5367,14 @@ public final class Settings {
         public static final String PROXIMITY_ON_WAKE = "proximity_on_wake";
 
         /**
+         * Whether the battery light should be enabled (if hardware supports it)
+         * The value is boolean (1 or 0).
+         * @hide
+         */
+        @Readable
+        public static final String BATTERY_LIGHT_ENABLED = "battery_light_enabled";
+
+        /**
         * Whether to show battery light when DND mode is active
         * @hide
         */
