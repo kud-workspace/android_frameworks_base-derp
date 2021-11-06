@@ -92,5 +92,6 @@ public class SystemSettings {
         Settings.System.BATTERY_LIGHT_FULL_COLOR,
         Settings.System.BATTERY_LIGHT_REALLYFULL_COLOR,
         Settings.System.BATTERY_LIGHT_ENABLED,
+        Settings.System.UDFPS_HAPTIC_FEEDBACK,
     };
 }
