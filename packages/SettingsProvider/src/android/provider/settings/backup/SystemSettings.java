@@ -133,5 +133,6 @@ public class SystemSettings {
         Settings.System.AOD_NOTIFICATION_PULSE_TIMEOUT,
         Settings.System.NOTIFICATION_PULSE_DURATION,
         Settings.System.SCREEN_OFF_ANIMATION,
+        Settings.System.DISABLE_RIPPLE_EFFECT,
     };
 }
