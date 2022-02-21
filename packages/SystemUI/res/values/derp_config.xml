@@ -23,4 +23,7 @@
         ambient_display,aod,caffeine,heads_up,livedisplay,reading_mode,anti_flicker,sync,powershare,usb_tether
     </string>
 
+    <!-- Udfps HBM provider class name -->
+    <string name="config_udfpsHbmProviderComponent">com.android.systemui.biometrics.DummyUdfpsHbmProvider</string>
+
 </resources>
