@@ -6211,12 +6211,6 @@ public final class Settings {
         public static final String UDFPS_ICON = "udfps_icon";
 
         /**
-         * Whether to pulse ambient on new music tracks
-         * @hide
-         */
-        public static final String PULSE_ON_NEW_TRACKS = "pulse_on_new_tracks";
-
-        /**
          * @hide
          */
         public static final String OMNI_KEYGUARD_SHOW_BATTERY_BAR = "sysui_keyguard_show_battery_bar";
