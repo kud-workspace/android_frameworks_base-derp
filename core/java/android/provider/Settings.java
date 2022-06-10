@@ -11808,12 +11808,6 @@ public final class Settings {
         public static final String PULSE_CUSTOM_GRAVITY = "pulse_custom_gravity";
 
         /**
-         * Pulse vertical mirror
-         * @hide
-         */
-        public static final String PULSE_VERTICAL_MIRROR = "pulse_vertical_mirror";
-
-        /**
          * Whether to show privacy indicator for camera
          * @hide
          */
